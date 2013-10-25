@@ -1,0 +1,126 @@
+doctype 5
+html(lang="en")
+	head
+		title My Daily Dose
+		
+	body
+		div.container
+			h1 My Daily Dose
+			.row
+				.col-md-3
+					.-affix-
+						.row.show-grid
+							form#createDoseSet
+								.form-group
+									label Titre du DoseSet :
+									input.doseSetTitle.form-control(type="text")
+								.form-group
+									label Nombre de doses dans le set :
+									input.doseNumber.form-control(type="number")
+								.form-group
+									label Ancienneté (1 pour aucune) :
+									input.doseOld.form-control(type="number")
+								button.btn.btn-primary(type="submit") Créer un Set de Doses
+							hr
+						
+						.row.show-grid
+							form.showDoseSets
+								button.loadAll.btn.btn-default(type="button") charger tous les sets
+								hr
+								select#doseSetSelector.form-control
+								br
+								br
+								button.btn.btn-primary(type="submit") Charger le Set
+								br
+								button.btn.btn-default.btn-sm.delete(type="button")
+									|Supprimer "
+									span.setTitle
+									|"
+								br
+								button.btn.btn-default.btn-sm.fav(type="button")
+									span.addRemove Ajouter
+									|"
+									span.setTitle
+									|"
+									span.auxDes aux
+									|favoris
+								br
+								button.btn.btn-default.btn-sm.showFavs(type="button")
+								br
+								select#favSetSelector.form-control
+								br
+								button.btn.btn-default.btn-sm.oneFav(type="button") Charger le Set
+								br
+								span
+									|Vous avez
+									span.favNum 0
+									|favori
+									span.hasFavs
+								br
+								button.btn.btn-default.btn-sm.remFav(type="button")
+				.col-md-9
+					#shots-container
+						.dribbbles
+							ul.shot-list
+				
+				
+									
+									
+									
+									
+		h1 Jade - node template engine
+		h2 Tested by 
+		#container.col
+			if youAreUsingJade
+				p You are amazing
+			else
+				p Get on it!
+			p.
+				Jade is a terse and simple
+				templating language with a
+				strong focus on performance
+				and powerful features.
+
+
+
+
+		:coffee
+			_gaq = _gaq || []
+			_gaq.push ['_setAccount', 'UA-29489178-1']
+			_gaq.push ['_trackPageview']
+			
+			ga = document.createElement 'script'
+			ga.type = 'text/javascript'
+			ga.async = true
+			if 'https:' == document.location.protocol
+				ga.src = 'https://ssl'
+			else
+				ga.src = 'http://www'
+			ga.src += '.google-analytics.com/ga.js'
+			s = document.getElementsByTagName('script')[0]
+			s.parentNode.insertBefore ga, s
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

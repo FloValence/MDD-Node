@@ -1,0 +1,124 @@
+extends layout
+
+block content
+	div.container
+		h1 My Daily Dose
+		.row
+			.col-md-3
+				.-affix-
+					.row.show-grid.hide
+						form#createUser
+							fieldset
+								legend Créer un utilisateur
+								.form-group
+									label.label-primary.label Nom d'utilisateur :
+									input.userName.form-control(type="text")
+								.form-group
+									label.label.label-default Adresse email :
+									input.userEmail.form-control(type="text")
+								.form-group
+									button.btn.btn-primary(type="submit") Créer l'utilisateur
+						
+					.row.show-grid
+						form#createDoseSet
+							fieldset
+								legend Créer un Set
+								.form-group
+									label.label.label-default Titre du DoseSet :
+									input.doseSetTitle.form-control(type="text")
+								.form-group
+									label.label.label-default Nombre de doses dans le set :
+									input.doseNumber.form-control(type="number", value="5")
+								.form-group
+									label.label.label-default Ancienneté (1 pour le plus rcent) :
+									input.doseOld.form-control(type="number", value="1")
+								.form-group
+									label.label.label-default Utilisateur associé :
+									select.userSelector.form-control
+								.form-group
+									button.btn.btn-primary(type="submit") Créer un Set de Doses
+
+					.row.show-grid
+						form.showDoseSets
+							fieldset
+								legend Tous les Sets
+								.form-group
+									button.loadAll.btn.btn-default(type="button") charger tous les sets
+								.form-group
+									select#doseSetSelector.form-control
+								.form-group
+									button.btn.btn-primary(type="submit") Charger le Set
+								.form-group
+									button.btn.btn-default.btn-sm.delete(type="button")
+										|Supprimer "
+										span.setTitle
+										|"
+								.form-group
+									button.btn.btn-default.btn-sm.fav(type="button")
+										span.addRemove Ajouter
+										|&nbsp;"
+										span.setTitle
+										|"&nbsp;
+										span.auxDes aux
+										|&nbsp;favoris
+							fieldset
+								legend Les favoris
+								.form-group
+									span
+										|Vous avez&nbsp;
+										span.favNum 0
+										|&nbsp;favori
+										span.hasFavs
+								.form-group
+									button.btn.btn-default.btn-sm.showFavs(type="button") Charger tous les sets favoris
+								.form-group
+									select#favSetSelector.form-control
+								.form-group
+									button.btn.btn-primary.btn-sm.oneFav(type="button") Charger le Set
+								.form-group
+									button.btn.btn-default.btn-sm.remFav(type="button") Retirer le Set des favoris
+					.row.show-grid.hide
+						form.showUserDoseSets
+							fieldset
+								legend Par utilisateur
+								.form-group
+									select.userSelector.form-control
+								.form-group
+									button.btn.btn-default.btn-sm.showAllUserDosesSets(type="button") Charger tous les sets de l'utilisateur
+								.form-group
+									select.userSetsSelector.form-control
+								.form-group
+									button.btn.btn-primary.btn-sm.showOneUserDoseSet(type="button") Charger le Set
+								
+			.col-md-9
+				#shots-container
+					.dribbbles
+						ul.shot-list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

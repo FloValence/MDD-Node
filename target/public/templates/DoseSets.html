@@ -1,0 +1,18 @@
+        <li class="one-shot" data-screenshot_id="{{ dose.id }}">
+            <div class="single">
+                <div class="single-grid">
+
+					<div class="single-img">
+                    <div data-picture="" data-alt="{{ dose.title }}">
+                        <a href="{{ dose.short_url }}" target="_blank">
+                        	<img alt="{{ dose.title }}" src="{{ dose.image_400_url || dose.image_url }}">
+                        	<div class="title"><p><span>{{{ dose.title }}}</span></p></div>
+                        	</a>
+
+					</div>
+                    </div>
+
+				</div>
+
+            </div>
+        </li>
