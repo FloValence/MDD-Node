@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['jquery', 'underscore', 'backbone', 'helpers', 'collections/DoseSets', 'views/ChooseDoseSetSelect', 'collections/Users'], function($, _, Backbone, Helpers, DoseSets, ChooseDoseSetSelect, Users) {
+  define(['jquery', 'underscore', 'backbone', 'helpers', 'collections/DoseSets', 'views/ChooseUserSelect', 'collections/Users'], function($, _, Backbone, Helpers, DoseSets, ChooseUserSelect, Users) {
     var ShowUserDoseSetForm, _ref;
     return ShowUserDoseSetForm = (function(_super) {
       __extends(ShowUserDoseSetForm, _super);
@@ -12,6 +12,30 @@
         _ref = ShowUserDoseSetForm.__super__.constructor.apply(this, arguments);
         return _ref;
       }
+
+      ShowUserDoseSetForm.prototype.el = '.showUserDoseSets';
+
+      ShowUserDoseSetForm.prototype.initialize = function() {
+        this.userSelector = this.$el.find('.userSelector');
+        this.users = this.options.users;
+        console.log(this);
+        return this.createSelects(this.users, this.userSelector);
+      };
+
+      ShowUserDoseSetForm.prototype.createSelects = function(collection, select) {
+        var _this = this;
+        return collection.each(function(model) {
+          return _this.addInSelect(model, select);
+        });
+      };
+
+      ShowUserDoseSetForm.prototype.addInSelect = function(model, select) {
+        var selectView;
+        selectView = new ChooseUserSelect({
+          'model': model
+        });
+        return select.append(selectView.render());
+      };
 
       return ShowUserDoseSetForm;
 
